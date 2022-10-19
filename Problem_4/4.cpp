@@ -2,18 +2,21 @@
 using namespace std;
 
 char CeasarShift(char c, int k){
-    if (c >= 'a' && c <= 'z'){
-        char ch = toupper(c);
-        ch = ((ch - 'A') + k) % 26 + 'A';
+    if (c >= 65 && c <= 90 ){
+        c += k % 26;
+        int ch = (c + 26 - 65 ) % 26 + 65 + 32;
+        return char (ch);
         }
-    else if (c>='A' && c<='Z'){
-        char ch = tolower(c);
-        ch = ((ch - 'a') + k) % 26 + 'a';
+    else if (c>= 97 && c<= 122 ){
+        c += k % 26; 
+        int ch = (c - 97 +26 )% 26+ 97 - 32;
+        return char (ch) ;
     }
     else{
         return c;
     };
-}
+};
+
 int main(){
     char mode , letter, ans;
     int k, delta;

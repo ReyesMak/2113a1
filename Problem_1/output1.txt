@@ -1,0 +1,16 @@
+Trains_2022-09-01.txt:
+     25 LMC
+     23 TWO
+     22 FAN
+Trains_2022-09-02.txt:
+     30 SHS
+     24 LMC
+     24 SHT
+Trains_2022-09-03.txt:
+      4 FAN
+      4 HHK
+      4 KOT
+Trains_2022-09-04.txt:
+     17 SHS
+     11 MOK
+      9 FAN

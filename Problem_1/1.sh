@@ -1,14 +1,17 @@
 #!/bin/bash
-#trainLog stores all the files in the "Problem_1" directory
-trainLog="`ls`"
-#For - Looping through files $data inside the "Problem_1" directory
+#Extract files with filename starting "Trains_"
+trainLog=`ls Trains_*`
+#Looping through each file prefixing "Trains_"
 for data in $trainLog
 do
-    # if - condition of no "Trains_" inside the file, which are all "Trains_2022-09-0x" files.
-    if [ "`grep -c 'Trains_' $data`" == 0 ]
-    then
-    # then find all the lines with ",E" which represent passenger trains, segment the station ID column,sort it and remove duplicate
-    echo $data
+    #Output the filename
+    echo "${data}"
+    #Find lines of passenger trains which have ",E"
+    #filter the stationId
+    #sort the stationId
+    #remove duplicate and find the number of duplicates
+    #sort the stationId based on the number of duplicates in descending order
+    #filter 3 stationId with the highest number of duplicates
+    #sort the stationId based on alphabetical order if having the same number of duplicates
     grep ",E" $data | cut -d "," -f 3 | sort | uniq -c | sort -nr | head -3 | sort -k1,1nr -k2
-    fi
-done         
+done
